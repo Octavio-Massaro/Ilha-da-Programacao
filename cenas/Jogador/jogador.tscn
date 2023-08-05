@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://by5ngi3mlk36g"]
+
+[ext_resource type="Script" path="res://cenas/Jogador/jogador.gd" id="1_gwrn7"]
+[ext_resource type="Texture2D" uid="uid://cgucyowm2c0md" path="res://cenas/Jogador/jogador-sprites/elf_m_run_anim_f0.png" id="2_st223"]
+[ext_resource type="Texture2D" uid="uid://bla7oh1lgg7e4" path="res://cenas/Jogador/jogador-sprites/elf_m_run_anim_f1.png" id="3_48wt0"]
+[ext_resource type="Texture2D" uid="uid://dnovh1cnsny18" path="res://cenas/Jogador/jogador-sprites/elf_m_run_anim_f2.png" id="4_3x5cw"]
+[ext_resource type="Texture2D" uid="uid://bxnbpc3ghje3j" path="res://cenas/Jogador/jogador-sprites/elf_m_run_anim_f3.png" id="5_t6wsk"]
+[ext_resource type="Texture2D" uid="uid://dud74ldjjty2i" path="res://cenas/Jogador/jogador-sprites/elf_m_idle_anim_f0.png" id="6_1hft5"]
+[ext_resource type="Texture2D" uid="uid://qok53itijijd" path="res://cenas/Jogador/jogador-sprites/elf_m_idle_anim_f1.png" id="7_v8i8w"]
+[ext_resource type="Texture2D" uid="uid://b8xcounve8mwo" path="res://cenas/Jogador/jogador-sprites/elf_m_idle_anim_f2.png" id="8_5lkxs"]
+[ext_resource type="Texture2D" uid="uid://djjaof82xcv2c" path="res://cenas/Jogador/jogador-sprites/elf_m_idle_anim_f3.png" id="9_senv3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2iln7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_st223")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_48wt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3x5cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t6wsk")
+}],
+"loop": true,
+"name": &"movendo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1hft5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_v8i8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5lkxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_senv3")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 5.0
+}]
+
+[node name="Jogador" type="CharacterBody2D"]
+script = ExtResource("1_gwrn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="animacaoMovimento" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2iln7")
+animation = &"parado"

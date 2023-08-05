@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ric76kklytfv"]
+
+[ext_resource type="PackedScene" uid="uid://by5ngi3mlk36g" path="res://cenas/Jogador/jogador.tscn" id="1_vgjcc"]
+
+[node name="CenaPrincipal" type="Node"]
+
+[node name="Jogador" parent="." instance=ExtResource("1_vgjcc")]
+position = Vector2(40, 26)
+scale = Vector2(1.01266, 1)
