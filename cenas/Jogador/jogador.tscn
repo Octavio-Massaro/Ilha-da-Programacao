@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://by5ngi3mlk36g"]
+[gd_scene load_steps=12 format=3 uid="uid://by5ngi3mlk36g"]
 
 [ext_resource type="Script" path="res://cenas/Jogador/jogador.gd" id="1_gwrn7"]
 [ext_resource type="Texture2D" uid="uid://cgucyowm2c0md" path="res://cenas/Jogador/jogador-sprites/elf_m_run_anim_f0.png" id="2_st223"]
@@ -47,11 +47,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Jogador" type="CharacterBody2D"]
-script = ExtResource("1_gwrn7")
+[sub_resource type="CircleShape2D" id="CircleShape2D_em14g"]
+radius = 6.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Jogador" type="CharacterBody2D" groups=["jogador"]]
+script = ExtResource("1_gwrn7")
 
 [node name="animacaoMovimento" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2iln7")
 animation = &"parado"
+offset = Vector2(0, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_em14g")
