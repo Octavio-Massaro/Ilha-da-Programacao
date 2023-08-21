@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqrv5le8uhbr5"
-path="res://.godot/imported/wall_edge_right.png-700c0df986b7b6f9d330720cbcf9b57b.ctex"
+uid="uid://bpohajeqvlstr"
+path="res://.godot/imported/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ambiente/wall_edge_right.png"
-dest_files=["res://.godot/imported/wall_edge_right.png-700c0df986b7b6f9d330720cbcf9b57b.ctex"]
+source_file="res://characters/player.png"
+dest_files=["res://.godot/imported/player.png-18b5fe307e30cf3d165de4ee9ef1e6f6.ctex"]
 
 [params]
 

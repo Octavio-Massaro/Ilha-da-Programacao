@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://gnd5fpdg6216"]
-
-[ext_resource type="Script" path="res://cenas/camera_jogo/camera_jogo.gd" id="1_lhvty"]
-
-[node name="CameraJogo" type="Camera2D"]
-script = ExtResource("1_lhvty")
