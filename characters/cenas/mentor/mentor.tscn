@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://lwvai4uv2478"]
+
+[ext_resource type="Texture2D" uid="uid://bpk5c3vgcvl1" path="res://characters/mentor_assets/wizzard_m_idle_anim_f0.png" id="1_6rm7d"]
+[ext_resource type="Script" path="res://characters/cenas/mentor/mentor.gd" id="1_o1g2x"]
+[ext_resource type="Texture2D" uid="uid://e6t8rfvys3gq" path="res://characters/mentor_assets/wizzard_m_idle_anim_f1.png" id="2_t16gm"]
+[ext_resource type="Texture2D" uid="uid://cvq246hy8vr2c" path="res://characters/mentor_assets/wizzard_m_idle_anim_f2.png" id="3_wh02i"]
+[ext_resource type="Texture2D" uid="uid://bgaf4vcdjdy6s" path="res://characters/mentor_assets/wizzard_m_idle_anim_f3.png" id="4_y84wn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ugvu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6rm7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t16gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wh02i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y84wn")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bd5n8"]
+
+[node name="Mentor" type="CharacterBody2D"]
+script = ExtResource("1_o1g2x")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ugvu1")
+animation = &"parado"
+frame_progress = 0.186349
+
+[node name="AreaDialogo" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="colisao" type="CollisionShape2D" parent="AreaDialogo"]
+position = Vector2(1, 6)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_bd5n8")
+
+[connection signal="body_entered" from="AreaDialogo" to="." method="_ao_entra_da_area_dialogo"]
+[connection signal="body_exited" from="AreaDialogo" to="." method="_ao_sair_da_area_dialogo"]

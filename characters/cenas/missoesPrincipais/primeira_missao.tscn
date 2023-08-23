@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0xs014x5ahe"]
+
+[ext_resource type="PackedScene" uid="uid://dessfmh8213tl" path="res://characters/cenas/jogador.tscn" id="1_vh56l"]
+[ext_resource type="PackedScene" uid="uid://lwvai4uv2478" path="res://characters/cenas/mentor/mentor.tscn" id="2_xfm8a"]
+
+[node name="PrimeiraMissao" type="Node2D"]
+position = Vector2(95, 56)
+
+[node name="Jogador" parent="." instance=ExtResource("1_vh56l")]
+position = Vector2(-5, 11)
+
+[node name="Mentor" parent="." node_paths=PackedStringArray("jogador") instance=ExtResource("2_xfm8a")]
+position = Vector2(118, -8)
+jogador = NodePath("../Jogador")

@@ -7,6 +7,8 @@ extends CharacterBody2D
 
 var _state_machine
 var esta_atacando: bool = false
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_state_machine = _animation_tree["parameters/playback"]
@@ -20,7 +22,9 @@ func _process(_delta):
 func _physics_process(_delta)-> void:
 	movimentar()
 	atacar()
-	animacao()
+	animacao()	
+	
+	
 
 func movimentar() -> void:
 	var direcao: Vector2 = Vector2(
@@ -44,7 +48,7 @@ func animacao() -> void:
 	if velocity != Vector2.ZERO:
 		_state_machine.travel("andando")
 		return
-	_state_machine.travel("andando")
+	_state_machine.travel("parado")
 	
 func atacar() -> void:
 	if Input.is_action_just_pressed("ataque") and !esta_atacando:

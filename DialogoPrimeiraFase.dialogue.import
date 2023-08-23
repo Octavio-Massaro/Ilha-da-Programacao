@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://qfxbirbuvcg3"
+path="res://.godot/imported/DialogoPrimeiraFase.dialogue-60ce2a5fa444972ac5a2e5be90a98c17.tres"
+
+[deps]
+
+source_file="res://DialogoPrimeiraFase.dialogue"
+dest_files=["res://.godot/imported/DialogoPrimeiraFase.dialogue-60ce2a5fa444972ac5a2e5be90a98c17.tres"]
+
+[params]
+
+defaults=true
