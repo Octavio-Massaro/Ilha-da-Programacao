@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://dessfmh8213tl"]
 
-[ext_resource type="Script" path="res://characters/cenas/jogador.gd" id="1_m8jqi"]
+[ext_resource type="Script" path="res://cenas/jogador.gd" id="1_m8jqi"]
 [ext_resource type="Texture2D" uid="uid://bpohajeqvlstr" path="res://characters/player.png" id="1_qei7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_auy18"]
@@ -394,7 +394,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false, false]
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_ra22h"]
@@ -845,5 +845,9 @@ one_shot = true
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_s717g")
 disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+limit_smoothed = true
 
 [connection signal="timeout" from="TempoAtaque" to="." method="_quando_tempo_ataque_acabar"]

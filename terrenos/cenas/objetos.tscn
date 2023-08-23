@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgd55s85s0uwl"]
+
+[ext_resource type="Texture2D" uid="uid://82rnwkx41y30" path="res://terrenos/assets/objects.png" id="1_207yd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uanrb"]
+texture = ExtResource("1_207yd")
+0:5/size_in_atlas = Vector2i(3, 4)
+0:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wdank"]
+sources/0 = SubResource("TileSetAtlasSource_uanrb")
+
+[node name="Objetos" type="TileMap"]
+tile_set = SubResource("TileSet_wdank")
+format = 2

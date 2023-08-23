@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var velocidade_movimento: float = 200
+@export var velocidade_movimento: float = 150
 @export_category("Objetos")
 @export var _animation_tree: AnimationTree = null
 @onready var temporizador_ataque: Timer = get_node("TempoAtaque")

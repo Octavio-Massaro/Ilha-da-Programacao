@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://lwvai4uv2478"]
 
 [ext_resource type="Texture2D" uid="uid://bpk5c3vgcvl1" path="res://characters/mentor_assets/wizzard_m_idle_anim_f0.png" id="1_6rm7d"]
-[ext_resource type="Script" path="res://characters/cenas/mentor/mentor.gd" id="1_o1g2x"]
+[ext_resource type="Script" path="res://cenas/mentor/mentor.gd" id="1_o1g2x"]
 [ext_resource type="Texture2D" uid="uid://e6t8rfvys3gq" path="res://characters/mentor_assets/wizzard_m_idle_anim_f1.png" id="2_t16gm"]
 [ext_resource type="Texture2D" uid="uid://cvq246hy8vr2c" path="res://characters/mentor_assets/wizzard_m_idle_anim_f2.png" id="3_wh02i"]
 [ext_resource type="Texture2D" uid="uid://bgaf4vcdjdy6s" path="res://characters/mentor_assets/wizzard_m_idle_anim_f3.png" id="4_y84wn"]
