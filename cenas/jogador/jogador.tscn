@@ -1,7 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://dessfmh8213tl"]
+[gd_scene load_steps=41 format=3 uid="uid://dessfmh8213tl"]
 
-[ext_resource type="Script" path="res://cenas/jogador.gd" id="1_m8jqi"]
 [ext_resource type="Texture2D" uid="uid://bpohajeqvlstr" path="res://characters/player.png" id="1_qei7y"]
+[ext_resource type="Script" path="res://cenas/jogador/jogador.gd" id="1_raorj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_auy18"]
 size = Vector2(12, 4)
@@ -549,6 +549,23 @@ tracks/5/keys = {
 "values": [true, false, true]
 }
 
+[sub_resource type="Animation" id="Animation_rdlfq"]
+resource_name = "morte"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textura:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [54, 55, 56]
+}
+
 [sub_resource type="Animation" id="Animation_hc5x3"]
 resource_name = "parado_baixo"
 length = 0.6
@@ -724,6 +741,7 @@ _data = {
 "atacando_cima": SubResource("Animation_1m4uy"),
 "atacando_direita": SubResource("Animation_ra22h"),
 "atacando_esquerda": SubResource("Animation_f02bc"),
+"morte": SubResource("Animation_rdlfq"),
 "parado_baixo": SubResource("Animation_hc5x3"),
 "parado_cima": SubResource("Animation_24aiw"),
 "parado_direita": SubResource("Animation_g16yx"),
@@ -776,6 +794,29 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_k3rln")
 blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_imk6p"]
+animation = &"morte"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1yews"]
+animation = &"morte"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gy18a"]
+animation = &"morte"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0o5i5"]
+animation = &"morte"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_h7h44"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_imk6p")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_1yews")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_gy18a")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_0o5i5")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4nyal"]
 animation = &"parado_baixo"
 
@@ -804,13 +845,15 @@ states/andando/node = SubResource("AnimationNodeBlendSpace2D_rpaw8")
 states/andando/position = Vector2(385, 128)
 states/atacando/node = SubResource("AnimationNodeBlendSpace2D_4xfdn")
 states/atacando/position = Vector2(385, 201)
+states/morte/node = SubResource("AnimationNodeBlendSpace2D_h7h44")
+states/morte/position = Vector2(377, 259)
 states/parado/node = SubResource("AnimationNodeBlendSpace2D_xwh63")
 states/parado/position = Vector2(377, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s717g"]
 
-[node name="Jogador" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree")]
-script = ExtResource("1_m8jqi")
+[node name="Jogador" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["jogador"]]
+script = ExtResource("1_raorj")
 _animation_tree = NodePath("AnimationTree")
 
 [node name="Colisao" type="CollisionShape2D" parent="."]
@@ -833,6 +876,7 @@ anim_player = NodePath("../Animacao")
 active = true
 parameters/andando/blend_position = Vector2(0, 0)
 parameters/atacando/blend_position = Vector2(0, 0)
+parameters/morte/blend_position = Vector2(0, 0)
 parameters/parado/blend_position = Vector2(0, 0)
 
 [node name="TempoAtaque" type="Timer" parent="."]
@@ -851,3 +895,4 @@ process_callback = 0
 limit_smoothed = true
 
 [connection signal="timeout" from="TempoAtaque" to="." method="_quando_tempo_ataque_acabar"]
+[connection signal="body_entered" from="AreaAtaque" to="." method="_ao_entrar_na_area_ataque"]

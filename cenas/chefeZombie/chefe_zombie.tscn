@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://blsyhntgjhc8h"]
+
+[ext_resource type="Texture2D" uid="uid://ctfmmadpdd54t" path="res://characters/chefeZombieAssets/big_zombie_run_anim_f0.png" id="1_iif1m"]
+[ext_resource type="Script" path="res://cenas/chefeZombie/chefe_zombie.gd" id="1_nhfr0"]
+[ext_resource type="Texture2D" uid="uid://ddw2kfq8fl7pi" path="res://characters/chefeZombieAssets/big_zombie_run_anim_f1.png" id="2_c7vte"]
+[ext_resource type="Texture2D" uid="uid://bglbvwlefx18y" path="res://characters/chefeZombieAssets/big_zombie_run_anim_f2.png" id="3_ou2wg"]
+[ext_resource type="Texture2D" uid="uid://u265ngpnvnjx" path="res://characters/chefeZombieAssets/big_zombie_run_anim_f3.png" id="4_57xrb"]
+[ext_resource type="Texture2D" uid="uid://deo31js4tv6cv" path="res://characters/chefeZombieAssets/big_zombie_idle_anim_f0.png" id="5_wd8r7"]
+[ext_resource type="Texture2D" uid="uid://x7hfcugqbttg" path="res://characters/chefeZombieAssets/big_zombie_idle_anim_f1.png" id="6_48i4a"]
+[ext_resource type="Texture2D" uid="uid://cb3seslfxew0y" path="res://characters/chefeZombieAssets/big_zombie_idle_anim_f2.png" id="7_lpu7w"]
+[ext_resource type="Texture2D" uid="uid://oghd5fgf2wri" path="res://characters/chefeZombieAssets/big_zombie_idle_anim_f3.png" id="8_61qii"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpmm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iif1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c7vte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ou2wg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_57xrb")
+}],
+"loop": true,
+"name": &"Correndo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wd8r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_48i4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lpu7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_61qii")
+}],
+"loop": true,
+"name": &"Parado",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbfic"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2baq"]
+radius = 120.0
+
+[node name="ChefeZombie" type="CharacterBody2D" groups=["inimigo"]]
+position = Vector2(0, -6)
+script = ExtResource("1_nhfr0")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_dpmm3")
+animation = &"Correndo"
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+position = Vector2(1, -9)
+shape = SubResource("CircleShape2D_bbfic")
+
+[node name="AreaDeteccao" type="Area2D" parent="."]
+
+[node name="Colisao" type="CollisionShape2D" parent="AreaDeteccao"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_g2baq")
+
+[connection signal="body_entered" from="AreaDeteccao" to="." method="_ao_entrar_na_area_deteccao"]
+[connection signal="body_exited" from="AreaDeteccao" to="." method="_ao_sair_na_area_deteccao"]

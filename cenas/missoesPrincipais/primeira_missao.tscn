@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://t0xs014x5ahe"]
+[gd_scene load_steps=5 format=3 uid="uid://t0xs014x5ahe"]
 
 [ext_resource type="PackedScene" uid="uid://wiau783k6tb3" path="res://terrenos/cenas/tile_map_jogo.tscn" id="1_2hut1"]
-[ext_resource type="PackedScene" uid="uid://dessfmh8213tl" path="res://cenas/jogador.tscn" id="1_vh56l"]
+[ext_resource type="PackedScene" uid="uid://dessfmh8213tl" path="res://cenas/jogador/jogador.tscn" id="1_vh56l"]
 [ext_resource type="PackedScene" uid="uid://lwvai4uv2478" path="res://cenas/mentor/mentor.tscn" id="2_xfm8a"]
+[ext_resource type="PackedScene" uid="uid://blsyhntgjhc8h" path="res://cenas/chefeZombie/chefe_zombie.tscn" id="4_4yp7i"]
 
 [node name="PrimeiraMissao" type="Node2D"]
 position = Vector2(95, 56)
@@ -18,3 +19,6 @@ position = Vector2(17, 27)
 [node name="Mentor" parent="." node_paths=PackedStringArray("jogador") instance=ExtResource("2_xfm8a")]
 position = Vector2(-53, 18)
 jogador = NodePath("../Jogador")
+
+[node name="ChefeZombie" parent="." instance=ExtResource("4_4yp7i")]
+position = Vector2(535, 87)

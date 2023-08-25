@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
+@export_category("Variaveis")
 @export var velocidade_movimento: float = 150
-@export_category("Objetos")
+@export var vida: int = 10
+@export_category("Nós")
 @export var _animation_tree: AnimationTree = null
 @onready var temporizador_ataque: Timer = get_node("TempoAtaque")
 
 var _state_machine
 var esta_atacando: bool = false
+var esta_morto = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,9 +23,10 @@ func _process(_delta):
 
 
 func _physics_process(_delta)-> void:
-	movimentar()
-	atacar()
-	animacao()	
+	if !esta_morto:
+		movimentar()
+		atacar()
+		animacao()	
 	
 	
 
@@ -56,10 +60,22 @@ func atacar() -> void:
 		temporizador_ataque.start()
 		esta_atacando = true
 		
-		
-
 
 func _quando_tempo_ataque_acabar() -> void:
 	esta_atacando = false
 	set_physics_process(true)
 	
+
+
+func _ao_entrar_na_area_ataque(body):
+	if body.is_in_group("inimigo"):
+		body.levar_dano(1)
+	
+func levar_dano(dano):
+	vida -= dano
+	if vida <= 0:
+		esta_morto = true
+		_state_machine.travel("morte")
+		await get_tree().create_timer(0.8).timeout
+		get_tree().reload_current_scene()
+		
