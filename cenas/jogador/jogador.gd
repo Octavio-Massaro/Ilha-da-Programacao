@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export_category("Nós")
 @export var _animation_tree: AnimationTree = null
 @onready var temporizador_ataque: Timer = get_node("TempoAtaque")
+@onready var textura: Sprite2D = get_node("Textura")
 
 var _state_machine
 var esta_atacando: bool = false
@@ -26,7 +27,7 @@ func _physics_process(_delta)-> void:
 	if !esta_morto:
 		movimentar()
 		atacar()
-		animacao()	
+		animar()	
 	
 	
 
@@ -44,7 +45,7 @@ func movimentar() -> void:
 	
 	move_and_slide()
 
-func animacao() -> void:
+func animar() -> void:
 	if esta_atacando:
 		_state_machine.travel("atacando")
 		return
@@ -66,16 +67,20 @@ func _quando_tempo_ataque_acabar() -> void:
 	set_physics_process(true)
 	
 
-
 func _ao_entrar_na_area_ataque(body):
 	if body.is_in_group("inimigo"):
 		body.levar_dano(1)
 	
 func levar_dano(dano):
 	vida -= dano
+	notificar_dano()
 	if vida <= 0:
 		esta_morto = true
 		_state_machine.travel("morte")
 		await get_tree().create_timer(0.8).timeout
 		get_tree().reload_current_scene()
 		
+func notificar_dano():
+	textura.modulate = "#c40000"
+	await get_tree().create_timer(0.2).timeout
+	textura.modulate = "#ffffff"

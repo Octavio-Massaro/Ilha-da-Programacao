@@ -7,34 +7,32 @@ var dano: int = 2
 var pode_atacar: bool = true
 
 @onready var animacao: AnimatedSprite2D = get_node("Animacao")
+
 func _ready():
 	pass 
-
-
-func _process(delta):
-	pass
 	
-
 func _physics_process(delta):
-	animar()
-	if referencia_jogador != null:
-		perseguir()
+	if referencia_jogador == null:
+		velocity = Vector2.ZERO
+		animar()
+		return
+		
+	perseguir()
 	
-
-
 func perseguir():
 	var direcao = global_position.direction_to(referencia_jogador.global_position)
 	var distancia_ataque = global_position.distance_to(referencia_jogador.global_position)
-	if distancia_ataque < 15 and pode_atacar:
-		atacar()
-	velocity = direcao * MOVE_SPEED
+	if distancia_ataque < 20:
+		if pode_atacar:
+			atacar()
+		velocity = Vector2.ZERO
+	else:
+		velocity = direcao * MOVE_SPEED
+	animar()
 	move_and_slide()
 	
 func atacar():
-	if referencia_jogador.vida == 0:
-		return
 	pode_atacar = false
-	velocity = Vector2.ZERO
 	referencia_jogador.levar_dano(dano)
 	await get_tree().create_timer(1.0).timeout
 	pode_atacar = true
@@ -46,7 +44,7 @@ func animar():
 	if velocity.x > 0:
 		animacao.flip_h = false
 		
-	if referencia_jogador != null:
+	if velocity != Vector2.ZERO:
 		animacao.play("Correndo")
 	else:
 		animacao.play("Parado")

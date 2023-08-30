@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://lwvai4uv2478"]
+[gd_scene load_steps=9 format=3 uid="uid://lwvai4uv2478"]
 
 [ext_resource type="Texture2D" uid="uid://bpk5c3vgcvl1" path="res://characters/mentor_assets/wizzard_m_idle_anim_f0.png" id="1_6rm7d"]
 [ext_resource type="Script" path="res://cenas/mentor/mentor.gd" id="1_o1g2x"]
@@ -26,17 +26,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_seqv4"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_bd5n8"]
 
 [node name="Mentor" type="CharacterBody2D"]
 script = ExtResource("1_o1g2x")
 
 [node name="Animacao" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_ugvu1")
 animation = &"parado"
 frame_progress = 0.186349
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -7)
+shape = SubResource("CircleShape2D_seqv4")
+
 [node name="AreaDialogo" type="Area2D" parent="."]
+position = Vector2(0, -9)
 collision_layer = 0
 
 [node name="colisao" type="CollisionShape2D" parent="AreaDialogo"]
