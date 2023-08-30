@@ -1,12 +1,11 @@
 extends Node2D
 
 var fim_dialogo: bool
-signal congela()
+var dialogo_atual:String = ""
 
 
 func _ready():
-	congela.connect(testar)
-	
+	pass
 func testar():
 	pass
 	

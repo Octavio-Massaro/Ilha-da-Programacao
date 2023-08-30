@@ -83,7 +83,6 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "0", extra
 	if not is_valid(dialogue):
 		dialogue_ended.emit(resource)
 		VariaveisGlobais.fim_dialogo = true
-		print(VariaveisGlobais.fim_dialogo)
 		return null
 
 	# Run the mutation if it is one

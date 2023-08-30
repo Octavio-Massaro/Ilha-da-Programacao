@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
+
 var referencia_jogador = null
 var MOVE_SPEED = 100
-var vida: int = 160
-var dano: int = 30
+var vida: int = 80
+var dano: int = 20
 var pode_atacar: bool = true
 
 @onready var barra_vida: ProgressBar = get_node("BarraVida")
-@onready var animacao: AnimatedSprite2D = get_node("Animacao")
+@onready var animacao: AnimationPlayer = get_node("Animacao")
+@onready var textura: Sprite2D = get_node("Textura")
 
 func _ready():
 	pass 
@@ -40,16 +42,20 @@ func atacar():
 	pode_atacar = true
 
 func animar():
+	if vida <= 0:
+		set_physics_process(false)
+		animacao.play("morte")
+		return
 	if velocity.x < 0:
-		animacao.flip_h = true
+		textura.flip_h = true
 		
 	if velocity.x > 0:
-		animacao.flip_h = false
+		textura.flip_h = false
 		
 	if velocity != Vector2.ZERO:
-		animacao.play("Correndo")
+		animacao.play("andando")
 	else:
-		animacao.play("Parado")
+		animacao.play("parado")
 
 func _ao_entrar_na_area_deteccao(body):
 	if body.is_in_group("jogador"):
@@ -63,16 +69,17 @@ func _ao_sair_na_area_deteccao(body):
 func levar_dano(dano):
 	vida -= dano
 	notificar_dano()
-	if vida <= 0:
-		get_tree().call_group("missao","contabilizar_inimigos_derrotados")
-		queue_free()
 
 func notificar_dano():
-	animacao.modulate = "#c40000"
+	textura.modulate = "#c40000"
 	await get_tree().create_timer(0.2).timeout
-	animacao.modulate = "#ffffff"
+	textura.modulate = "#ffffff"
 	
 func atualizar_barra_vida():
 	barra_vida.value = vida
-	
-	
+
+
+func _ao_terminar_animacao(anim_name):
+	if anim_name == "morte":
+		get_tree().call_group("missao","contabilizar_inimigos_derrotados")
+		queue_free()

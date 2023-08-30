@@ -15,7 +15,7 @@ func _process(delta):
 	if pode_interagir and Input.is_action_just_pressed("interagir"):
 		pode_interagir = false	
 		jogador.set_physics_process(false)
-		DialogueManager.show_example_dialogue_balloon(load("res://DialogoPrimeiraFase.dialogue"))
+		DialogueManager.show_example_dialogue_balloon(load(VariaveisGlobais.dialogo_atual))
 	if VariaveisGlobais.fim_dialogo:
 		jogador.set_physics_process(true)
 

@@ -79,7 +79,7 @@ offset_top = 3.0
 offset_right = 128.0
 offset_bottom = 30.0
 scale = Vector2(0.125, 0.125)
-max_value = 60.0
+max_value = 160.0
 show_percentage = false
 
 [connection signal="body_entered" from="AreaDeteccao" to="." method="_ao_entrar_na_area_deteccao"]

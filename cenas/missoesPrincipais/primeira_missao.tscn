@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://t0xs014x5ahe"]
+[gd_scene load_steps=7 format=3 uid="uid://t0xs014x5ahe"]
 
 [ext_resource type="PackedScene" uid="uid://wiau783k6tb3" path="res://terrenos/cenas/tile_map_jogo.tscn" id="1_2hut1"]
 [ext_resource type="PackedScene" uid="uid://dessfmh8213tl" path="res://cenas/jogador/jogador.tscn" id="1_vh56l"]
 [ext_resource type="Script" path="res://cenas/missoesPrincipais/primeira_missao.gd" id="1_wv1yq"]
 [ext_resource type="PackedScene" uid="uid://lwvai4uv2478" path="res://cenas/mentor/mentor.tscn" id="2_xfm8a"]
 [ext_resource type="PackedScene" uid="uid://blsyhntgjhc8h" path="res://cenas/chefeZombie/chefe_zombie.tscn" id="4_4yp7i"]
+[ext_resource type="PackedScene" uid="uid://dmw1uiy11n781" path="res://cenas/slime/slime.tscn" id="6_5ndj5"]
 
-[node name="PrimeiraMissao" type="Node2D"]
+[node name="PrimeiraMissao" type="Node2D" groups=["missao"]]
 position = Vector2(95, 56)
 script = ExtResource("1_wv1yq")
 
@@ -24,3 +25,15 @@ jogador = NodePath("../Jogador")
 
 [node name="ChefeZombie" parent="." instance=ExtResource("4_4yp7i")]
 position = Vector2(535, 87)
+
+[node name="Slime" parent="." instance=ExtResource("6_5ndj5")]
+position = Vector2(259, 236)
+
+[node name="Slime2" parent="." instance=ExtResource("6_5ndj5")]
+position = Vector2(568, 249)
+
+[node name="Slime3" parent="." instance=ExtResource("6_5ndj5")]
+position = Vector2(45, 230)
+
+[node name="Slime4" parent="." instance=ExtResource("6_5ndj5")]
+position = Vector2(242, 64)

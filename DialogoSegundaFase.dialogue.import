@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://ccekvdiydbyky"
+path="res://.godot/imported/DialogoSegundaFase.dialogue-6f48575631b169d1d824ef1a73938891.tres"
+
+[deps]
+
+source_file="res://DialogoSegundaFase.dialogue"
+dest_files=["res://.godot/imported/DialogoSegundaFase.dialogue-6f48575631b169d1d824ef1a73938891.tres"]
+
+[params]
+
+defaults=true
