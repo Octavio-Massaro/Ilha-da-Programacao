@@ -2,16 +2,18 @@ extends CharacterBody2D
 
 var referencia_jogador = null
 var MOVE_SPEED = 100
-var vida: int = 3
-var dano: int = 2
+var vida: int = 60
+var dano: int = 20
 var pode_atacar: bool = true
 
+@onready var barra_vida: ProgressBar = get_node("BarraVida")
 @onready var animacao: AnimatedSprite2D = get_node("Animacao")
 
 func _ready():
 	pass 
 	
 func _physics_process(delta):
+	atualizar_barra_vida()
 	if referencia_jogador == null:
 		velocity = Vector2.ZERO
 		animar()
@@ -68,3 +70,8 @@ func notificar_dano():
 	animacao.modulate = "#c40000"
 	await get_tree().create_timer(0.2).timeout
 	animacao.modulate = "#ffffff"
+	
+func atualizar_barra_vida():
+	barra_vida.value = vida
+	
+	
