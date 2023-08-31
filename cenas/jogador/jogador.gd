@@ -76,8 +76,10 @@ func _ao_entrar_na_area_ataque(body):
 	
 func levar_dano(dano):
 	vida -= dano
+	print(vida)
 	notificar_dano()
 	if vida <= 0:
+		barra_vida.value = 0
 		esta_morto = true
 		_state_machine.travel("morte")
 		await get_tree().create_timer(0.8).timeout

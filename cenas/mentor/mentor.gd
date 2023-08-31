@@ -17,12 +17,12 @@ func _process(delta):
 		jogador.set_physics_process(false)
 		DialogueManager.show_example_dialogue_balloon(load(VariaveisGlobais.dialogo_atual))
 	if VariaveisGlobais.fim_dialogo:
+		VariaveisGlobais.fim_dialogo = false
 		jogador.set_physics_process(true)
-
+		
 func _ao_entra_da_area_dialogo(body):	
 	if body.name == "Jogador":
 		pode_interagir = true
-		VariaveisGlobais.fim_dialogo = false
 
 func _ao_sair_da_area_dialogo(body):
 	if body.name == "Jogador":
