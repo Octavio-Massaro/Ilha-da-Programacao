@@ -78,7 +78,6 @@ func notificar_dano():
 func atualizar_barra_vida():
 	barra_vida.value = vida
 
-
 func _ao_terminar_animacao(anim_name):
 	if anim_name == "morte":
 		get_tree().call_group("missao","contabilizar_inimigos_derrotados")

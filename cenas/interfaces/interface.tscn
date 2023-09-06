@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0ckr5cgvkhfh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vrvpb"]
+font_size = 12
+
+[node name="Interface" type="CanvasLayer"]
+
+[node name="Texto" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_right = 118.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Derrote todos os inimigos"
+label_settings = SubResource("LabelSettings_vrvpb")

@@ -101,7 +101,7 @@ func atualizar_barra_vida() -> void:
 func regenerar_vida() -> void:
 	if vida < 100:
 		
-		vida = vida + 20
+		vida += 10
 		if vida > 100:
 			vida = 100
 		if vida < 0:

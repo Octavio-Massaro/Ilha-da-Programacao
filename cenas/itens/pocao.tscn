@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://crltxxhw85w35"]
+
+[ext_resource type="Script" path="res://cenas/itens/pocao.gd" id="1_0d2rl"]
+[ext_resource type="Texture2D" uid="uid://c5uyfuw6u3pbo" path="res://terrenos/assets/flask_big_red.png" id="1_4cu4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gj84k"]
+
+[node name="Pocao" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_0d2rl")
+
+[node name="Textura" type="Sprite2D" parent="."]
+texture = ExtResource("1_4cu4u")
+
+[node name="AreaIntercao" type="Area2D" parent="."]
+
+[node name="Colisao" type="CollisionShape2D" parent="AreaIntercao"]
+shape = SubResource("CircleShape2D_gj84k")
+
+[connection signal="body_entered" from="AreaIntercao" to="." method="_on_area_interacao_body_entered"]

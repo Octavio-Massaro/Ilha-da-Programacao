@@ -853,6 +853,7 @@ states/parado/position = Vector2(377, 51)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s717g"]
 
 [node name="Jogador" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["jogador"]]
+y_sort_enabled = true
 script = ExtResource("1_raorj")
 _animation_tree = NodePath("AnimationTree")
 
@@ -904,7 +905,7 @@ scale = Vector2(0.125, 0.125)
 show_percentage = false
 
 [node name="TempoRegeneracao" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="TempoAtaque" to="." method="_quando_tempo_ataque_acabar"]
