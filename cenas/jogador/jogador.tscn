@@ -853,7 +853,6 @@ states/parado/position = Vector2(377, 51)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s717g"]
 
 [node name="Jogador" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree") groups=["jogador"]]
-y_sort_enabled = true
 script = ExtResource("1_raorj")
 _animation_tree = NodePath("AnimationTree")
 

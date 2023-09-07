@@ -6,10 +6,17 @@
 texture = ExtResource("1_207yd")
 0:5/size_in_atlas = Vector2i(3, 4)
 0:5/0 = 0
+0:5/0/texture_origin = Vector2i(0, 18)
+0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:5/0/physics_layer_0/angular_velocity = 0.0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 10.6875, 2.125, 9.1875, 8, -4.6875, 8, -10.9375, 4.625, -10.8125, -2.625)
 
 [sub_resource type="TileSet" id="TileSet_wdank"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uanrb")
 
 [node name="Objetos" type="TileMap"]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_wdank")
 format = 2
+layer_0/y_sort_enabled = true

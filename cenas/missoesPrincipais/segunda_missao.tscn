@@ -1,21 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://duhg701mb5hao"]
+[gd_scene load_steps=7 format=3 uid="uid://duhg701mb5hao"]
 
 [ext_resource type="Script" path="res://cenas/missoesPrincipais/segunda_missao.gd" id="1_o1iun"]
 [ext_resource type="PackedScene" uid="uid://wiau783k6tb3" path="res://terrenos/cenas/tile_map_jogo.tscn" id="2_timen"]
 [ext_resource type="PackedScene" uid="uid://dessfmh8213tl" path="res://cenas/jogador/jogador.tscn" id="2_xwtij"]
 [ext_resource type="PackedScene" uid="uid://lwvai4uv2478" path="res://cenas/mentor/mentor.tscn" id="3_bmekn"]
 [ext_resource type="PackedScene" uid="uid://b0x1xln6or6bs" path="res://cenas/itensMissoesPrincipais/cadeado.tscn" id="5_o4u5m"]
+[ext_resource type="PackedScene" uid="uid://dgd55s85s0uwl" path="res://terrenos/cenas/objetos.tscn" id="6_oxwo2"]
 
 [node name="SegundaMissao" type="Node2D" groups=["missao"]]
 script = ExtResource("1_o1iun")
 
 [node name="TileMap" parent="." instance=ExtResource("2_timen")]
 
-[node name="Jogador" parent="." instance=ExtResource("2_xwtij")]
-position = Vector2(104, 67)
-
 [node name="Mentor" parent="." node_paths=PackedStringArray("jogador") instance=ExtResource("3_bmekn")]
 position = Vector2(19, 72)
-jogador = NodePath("../Jogador")
+jogador = NodePath("../YSort/Jogador")
 
 [node name="Item" parent="." instance=ExtResource("5_o4u5m")]
+
+[node name="YSort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Jogador" parent="YSort" instance=ExtResource("2_xwtij")]
+position = Vector2(175, 89)
+
+[node name="Objetos" parent="YSort" instance=ExtResource("6_oxwo2")]
+layer_0/tile_data = PackedInt32Array(262157, 0, 5)
