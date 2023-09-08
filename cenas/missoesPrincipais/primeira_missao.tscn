@@ -56,4 +56,4 @@ y_sort_enabled = true
 position = Vector2(17, 27)
 
 [node name="Objetos" parent="YSort" instance=ExtResource("9_imcd8")]
-layer_0/tile_data = PackedInt32Array(720905, 0, 5)
+layer_0/tile_data = PackedInt32Array(720905, 0, 5, 786475, 0, 5, 45, 524288, 6, 720914, 393216, 7, 15, 0, 5, 37, 524288, 6, 851999, 393216, 7, 1114111, 0, 1)
