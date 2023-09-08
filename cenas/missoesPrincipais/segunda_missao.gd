@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if jogador_possui_item and VariaveisGlobais.fim_dialogo:
 		jogador_possui_item = false
 		await get_tree().create_timer(2.0).timeout

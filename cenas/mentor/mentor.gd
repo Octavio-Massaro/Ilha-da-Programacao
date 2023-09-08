@@ -11,7 +11,7 @@ func _ready():
 	animacao.play("parado")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if pode_interagir and Input.is_action_just_pressed("interagir"):
 		pode_interagir = false	
 		jogador.set_physics_process(false)
