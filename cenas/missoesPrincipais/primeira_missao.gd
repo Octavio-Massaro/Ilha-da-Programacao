@@ -2,6 +2,7 @@ extends Node2D
 
 var contador_inimigos_derrotados: int = 0
 @export var inimigos_necessarios_para_progredir: int = 5
+@onready var texto: Label = get_node("Interface/Texto")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,4 +19,7 @@ func contabilizar_inimigos_derrotados():
 	
 	if contador_inimigos_derrotados == inimigos_necessarios_para_progredir:
 		await get_tree().create_timer(2.0).timeout
-		get_tree().change_scene_to_file("res://cenas/missoesPrincipais/segunda_missao.tscn")
+		texto.visible = false
+		TelaDeTransicao.caminhoDaCena = "res://cenas/missoesPrincipais/segunda_missao.tscn" 
+		TelaDeTransicao.aparecer()
+		

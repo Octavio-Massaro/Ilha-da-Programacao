@@ -11,10 +11,8 @@ var pode_atacar: bool = true
 @onready var animacao: AnimationPlayer = get_node("Animacao")
 @onready var textura: Sprite2D = get_node("Textura")
 
-func _ready():
-	pass 
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	atualizar_barra_vida()
 	if referencia_jogador == null:
 		velocity = Vector2.ZERO

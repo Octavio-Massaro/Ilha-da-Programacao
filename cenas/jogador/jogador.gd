@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export_category("Variaveis")
 @export var velocidade_movimento: float = 150
 @export var vida: int = 100
-@export var dano: int = 20
+@export var dano: int = 200
 @export_category("Nós")
 @export var _animation_tree: AnimationTree = null
 @onready var temporizador_ataque: Timer = get_node("TempoAtaque")
@@ -76,7 +76,6 @@ func _ao_entrar_na_area_ataque(body):
 	
 func levar_dano(dano):
 	vida -= dano
-	print(vida)
 	notificar_dano()
 	if vida <= 0:
 		barra_vida.value = 0

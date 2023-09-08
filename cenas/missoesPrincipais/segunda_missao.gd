@@ -11,7 +11,8 @@ func _process(delta):
 	if jogador_possui_item and VariaveisGlobais.fim_dialogo:
 		jogador_possui_item = false
 		await get_tree().create_timer(2.0).timeout
-		get_tree().change_scene_to_file("res://cenas/missoesPrincipais/primeira_missao.tscn")
+		TelaDeTransicao.caminhoDaCena = "res://cenas/missoesPrincipais/primeira_missao.tscn"
+		TelaDeTransicao.aparecer()
 	
 	
 	
