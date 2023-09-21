@@ -1,13 +1,22 @@
-~ this_is_a_node_title
-
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
-
+~ dialogo_da_segunda_missao_parte_1
+Mentor: Meu deus! Os meus livros e moveis sumiram, eu sabia que não poderia ficar tanto tempo longe de casa.
+Mentor: Agora todos eles foram deletados pela Ilha.
+João: Como assim as suas mobílias foram deletadas?
+Mentor: Eu acabei me esquecendo de te avisar, mas aqui nessa ilha se uma coisa fica muito tempo sem ser utilizada, ela acaba sendo excluída para abrir espaço na memória.
+Mentor: Comentei com você anteriormente que todo objeto é uma materialização de uma classe, mas para que isso aconteça deve haver um método construtor.
+Mentor: O construtor é o responsável por atribuir os valores aos atributos.
+Mentor: Contrário ao construtor, existe o destrutor que deleta os objetos que não estão sendo utilizados com frequência.
+João: Que pena, Mentor, espero que de alguma maneira o senhor recupere seus itens.
+João: Mas lembro que nós tínhamos um acordo, eu traria o senhor de volta para sua casa e o senhor me ajudaria a voltar para a minha.
+Mentor: Está certo, de fato eu prometi para você que iria ajudar e irei, mas primeiro devo pedir mais uma ajuda...
+Mentor: Preciso que você recupere para mim um item, ele é um cadeado e é responsável por privar meus métodos e atributos.
+João: Mas o que um cadeado vai te ajudar?
+João: Por favor, não tente me enrolar!
+Mentor: Não estou enrolando ninguém. O que acontece é que meus atributos estão públicos e dessa forma, qualquer um pode alterar as informações da minha classe de fora dela.
+Mentor: Sendo assim, eu não tenho informações precisas para te dar.
+João: Ok, eu vou recuperar esse cadeado para o senhor e depois eu espero que você retribua o meu favor.
+Mentor: Apenas tenha cuidado, essa área está repleta de erros de código que se materializam como Monstros do tipo Orc.
+Mentor: Esses inimigos não são brincadeira e atacaram assim que ver você.
+Mentor: Se o cadeado estiver por aqui, ele deve estar sendo vigiado pelo chefe dos Orcs, um objeto desprezível se me permite dizer.
+João: Ok, eu vou ficar atento e retornarei com seu item.
 => END

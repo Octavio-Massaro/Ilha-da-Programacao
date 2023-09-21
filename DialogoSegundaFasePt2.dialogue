@@ -1,0 +1,27 @@
+~ dialogo_da_segunda_missao_parte_2
+Mentor: Meus parabéns, João. Eu sabia que você conseguiria trazer de volta o meu cadeado.
+Mentor: Agora eu posso finalmente privar meus atributos e garantir uma maior segurança das minhas informações.
+João: Que bom que pude ajudar. Aqueles Orcs eram mesmo durões, mal consegui chegar aqui inteiro.
+Mentor: ..........
+João: Mentor, o senhor está tentando me dizer algo? Sua voz não está saindo!
+Mentor: Perdão, meu jovem. Eu acabei privando o meu método falar e dessa forma não consegui manter o diálogo contigo.
+Mentor: Lembre-se sempre: prive seus atributos e mantenha seus métodos públicos, senão você não conseguirá acessar seus métodos. 
+João: Certo, eu te ajudei com o seu item, agora desejo voltar para o meu mundo, terei prova de orientação a objetos e preciso estudar.
+Mentor: Muito bem, meu caro. Eu te ajudarei com isso como já te disse, mas antes eu prometi que te contaria da realidade dessa ilha quando estávamos na estrada.
+João: Olha, já disse para não me enrolar!
+Mentor: Prometo que serei breve e no final você pode decidir se deseja nos apoiar.
+João: Ok, pode me contar.
+Mentor: Bom, há muito tempo um vilão chamado Dark Code chegou nessa ilha, assim como você.
+Mentor: Ele tinha o desejo de controlar a todos e para isso roubou a classe erro de código e, dessa forma, montou seu próprio exército para subjugar os outros objetos.
+Mentor: Como você pode ver, os objetos daquela estrada estavam com seus códigos corrompido pelos bugs de Dark Code.
+Mentor: Os inimigos criados por ele são conhecidos como bugs ou erro de códigos.
+Mentor: Então esses bugs, podem comprometer o código de outros objetos e quando isso ocorre o objeto que teve seu código alterado se torna um erro de código como eles e então tentam atacar outros objetos para que seu número aumente ainda mais.
+João: Mas que pena desses pobres objetos inocentes, esse destino é cruel demais.
+Mentor: Para tentar lutar contra a tirania de Dark Code, nós criamos a resistência, um grupo de objetos que desejam a liberdade dessa ilha e o fim desse autoritarismo.
+Mentor: No entanto, as forças de nosso inimigo continuam aumentando, enquanto a nossa diminui.
+João: Esses atos de maldade não podem ficar impunes, o que posso fazer para auxiliar a causa de vocês?
+Mentor: Com certeza, meu jovem. Você possui a espada Code Cleaner e ela tem a propriedade de lidar com os bugs corrigindo o código deles.
+Mentor: Então você é o único que pode mudar a nossa situação e vencer Dark Code e seu exército de erros de códigos.
+João: Prometo ao senhor que ajudarei vocês e enfrentarei Dark Code.
+Mentor: Não tenho palavras para transmitir meus agradecimentos, mas agora descanse e amanhã te levarei para os planaltos do Heap, onde Dark Code habita.
+=> END

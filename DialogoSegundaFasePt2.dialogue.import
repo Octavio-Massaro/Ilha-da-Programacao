@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://bhlwxu05fppnq"
+path="res://.godot/imported/DialogoSegundaFasePt2.dialogue-ee2c924bac2585b54bc481a86c89f3f9.tres"
+
+[deps]
+
+source_file="res://DialogoSegundaFasePt2.dialogue"
+dest_files=["res://.godot/imported/DialogoSegundaFasePt2.dialogue-ee2c924bac2585b54bc481a86c89f3f9.tres"]
+
+[params]
+
+defaults=true
