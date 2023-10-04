@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://y24846ttwc8t"
+path="res://.godot/imported/DialogoTerceiraFase.dialogue-bd974a3f738fc7c5ab401f8c7e785e08.tres"
+
+[deps]
+
+source_file="res://DialogoTerceiraFase.dialogue"
+dest_files=["res://.godot/imported/DialogoTerceiraFase.dialogue-bd974a3f738fc7c5ab401f8c7e785e08.tres"]
+
+[params]
+
+defaults=true

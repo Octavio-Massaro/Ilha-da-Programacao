@@ -1,11 +1,22 @@
 extends Node2D
 
+@onready var texto: Label = get_node("Interface/Texto")
+var condicaoVitoria: bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	VariaveisGlobais.dialogo_atual = "res://teste.dialogue"
+	VariaveisGlobais.dialogo_atual = "res://DialogoTerceiraFase.dialogue"
+	texto.text = "  Derrote Dark code  "
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+func _process(_delta):
+	if condicaoVitoria:
+		await get_tree().create_timer(2.0).timeout
+		TelaDeTransicao.caminhoDaCena = "res://cenas/missoesPrincipais/primeira_missao.tscn"
+		TelaDeTransicao.aparecer()
+		
+	
+	
+func darkCodeDerrotado():
+	condicaoVitoria = true;
+

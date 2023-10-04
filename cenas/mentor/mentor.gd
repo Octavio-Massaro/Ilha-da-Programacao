@@ -6,11 +6,12 @@ var dialogo_aberto: bool = false
 var congelar: bool = true
 @export_category("Objects")
 @export var jogador: CharacterBody2D = null
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready():
 	animacao.play("parado")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta):
 	if pode_interagir and Input.is_action_just_pressed("interagir"):
 		pode_interagir = false	

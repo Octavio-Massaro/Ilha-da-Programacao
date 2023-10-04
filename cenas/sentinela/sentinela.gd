@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var referencia_jogador = null
-var MOVE_SPEED = 100
-var vida: int = 160
+var MOVE_SPEED = 120
+var vida: int = 100
 var dano: int = 30
 var pode_atacar: bool = true
 
@@ -47,9 +47,9 @@ func animar():
 		animacao.flip_h = false
 		
 	if velocity != Vector2.ZERO:
-		animacao.play("Correndo")
+		animacao.play("andando")
 	else:
-		animacao.play("Parado")
+		animacao.play("parado")
 
 func _ao_entrar_na_area_deteccao(body):
 	if body.is_in_group("jogador"):
@@ -64,7 +64,6 @@ func levar_dano(dano):
 	vida -= dano
 	notificar_dano()
 	if vida <= 0:
-		get_tree().call_group("missao","contabilizar_inimigos_derrotados")
 		queue_free()
 
 func notificar_dano():
@@ -74,3 +73,4 @@ func notificar_dano():
 	
 func atualizar_barra_vida():
 	barra_vida.value = vida
+

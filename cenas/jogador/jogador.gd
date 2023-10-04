@@ -13,16 +13,13 @@ extends CharacterBody2D
 var _state_machine
 var esta_atacando: bool = false
 var esta_morto = false
+var vida_maxima: int
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	vida_maxima = vida
+	barra_vida.max_value = vida_maxima
 	_state_machine = _animation_tree["parameters/playback"]
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 
 func _physics_process(_delta)-> void:
@@ -92,20 +89,18 @@ func notificar_dano():
 func atualizar_barra_vida() -> void:
 	barra_vida.value = vida
 	
-	if vida == 100:
+	if vida >= vida_maxima:
 		barra_vida.visible = false
 	else:
 		barra_vida.visible = true
 	
 func regenerar_vida() -> void:
-	if vida < 100:
-		
+	if vida < vida_maxima:
 		vida += 10
-		if vida > 100:
-			vida = 100
+		if vida > vida_maxima:
+			vida = vida_maxima	
 		if vida < 0:
 			vida = 0
 			
-
 func quando_tempo_regeneracao_acabar():
 	regenerar_vida()

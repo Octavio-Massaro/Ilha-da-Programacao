@@ -4,12 +4,10 @@ var contador_inimigos_derrotados: int = 0
 @export var inimigos_necessarios_para_progredir: int = 5
 @onready var texto: Label = get_node("Interface/Texto")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	VariaveisGlobais.dialogo_atual = "res://DialogoPrimeiraFase.dialogue"
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 	

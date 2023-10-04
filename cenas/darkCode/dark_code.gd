@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 var referencia_jogador = null
-var MOVE_SPEED = 100
-var vida: int = 160
-var dano: int = 30
+var MOVE_SPEED = 130
+var vida: int = 120
+var dano: int = 40
 var pode_atacar: bool = true
 
 @onready var barra_vida: ProgressBar = get_node("BarraVida")
@@ -47,9 +47,9 @@ func animar():
 		animacao.flip_h = false
 		
 	if velocity != Vector2.ZERO:
-		animacao.play("Correndo")
+		animacao.play("andando")
 	else:
-		animacao.play("Parado")
+		animacao.play("parado")
 
 func _ao_entrar_na_area_deteccao(body):
 	if body.is_in_group("jogador"):
@@ -64,7 +64,7 @@ func levar_dano(dano):
 	vida -= dano
 	notificar_dano()
 	if vida <= 0:
-		get_tree().call_group("missao","contabilizar_inimigos_derrotados")
+		get_tree().call_group("missao","darkCodeDerrotado")
 		queue_free()
 
 func notificar_dano():
@@ -74,3 +74,5 @@ func notificar_dano():
 	
 func atualizar_barra_vida():
 	barra_vida.value = vida
+
+
