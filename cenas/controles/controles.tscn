@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjv5yiio07p8o"]
+
+[ext_resource type="Script" path="res://cenas/controles/controles.gd" id="1_0oex2"]
+[ext_resource type="FontFile" uid="uid://bw1l1g7bumcq7" path="res://characters/fonte/Kurland.ttf" id="1_5t4lg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgbpu"]
+font = ExtResource("1_5t4lg")
+font_size = 15
+
+[node name="Controles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0oex2")
+
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Movimentacao" type="Label" parent="Fundo"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 46.0
+text = "Movimentação: A, W, S, D"
+label_settings = SubResource("LabelSettings_lgbpu")
+
+[node name="Interagir" type="Label" parent="Fundo"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 50.0
+offset_right = 240.0
+offset_bottom = 76.0
+text = "Interagir: E
+"
+label_settings = SubResource("LabelSettings_lgbpu")
+
+[node name="Atacar" type="Label" parent="Fundo"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 240.0
+offset_bottom = 130.0
+text = "Atacar: LMB ou Q
+"
+label_settings = SubResource("LabelSettings_lgbpu")
+
+[node name="Voltar" type="Button" parent="Fundo"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 138.0
+offset_right = 182.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("1_5t4lg")
+theme_override_font_sizes/font_size = 15
+text = "Voltar
+"
+
+[connection signal="pressed" from="Fundo/Voltar" to="." method="_ao_pressionar_voltar"]

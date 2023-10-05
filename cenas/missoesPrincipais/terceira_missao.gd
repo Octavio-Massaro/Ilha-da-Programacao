@@ -12,7 +12,7 @@ func _ready():
 func _process(_delta):
 	if condicaoVitoria:
 		await get_tree().create_timer(2.0).timeout
-		TelaDeTransicao.caminhoDaCena = "res://cenas/missoesPrincipais/primeira_missao.tscn"
+		TelaDeTransicao.caminhoDaCena = "res://cenas/creditos/creditos.tscn"
 		TelaDeTransicao.aparecer()
 		
 	

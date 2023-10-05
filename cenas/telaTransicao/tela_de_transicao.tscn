@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8v0sh1ku1p4y"]
+[gd_scene load_steps=9 format=3 uid="uid://c8v0sh1ku1p4y"]
 
 [ext_resource type="Script" path="res://cenas/telaTransicao/tela_de_transicao.gd" id="1_wehgc"]
+[ext_resource type="FontFile" uid="uid://bw1l1g7bumcq7" path="res://characters/fonte/Kurland.ttf" id="2_bs14h"]
 [ext_resource type="AudioStream" uid="uid://bb27d8x5tr715" path="res://characters/musicas/Goblins_Dance_(Battle).wav" id="2_dtuhj"]
 
 [sub_resource type="Animation" id="Animation_dtfax"]
@@ -20,7 +21,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label:modulate")
+tracks/1/path = NodePath("Texto:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -48,7 +49,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label:modulate")
+tracks/1/path = NodePath("Texto:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -81,6 +82,7 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_poku0"]
+font = ExtResource("2_bs14h")
 font_size = 20
 
 [node name="TelaDeTransicao" type="CanvasLayer"]
@@ -92,6 +94,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="Animacao" type="AnimationPlayer" parent="."]
@@ -99,7 +102,7 @@ libraries = {
 "": SubResource("AnimationLibrary_46h0g")
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Texto" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5

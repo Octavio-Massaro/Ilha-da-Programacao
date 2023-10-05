@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0qvhl7kcx26i"]
+
+[ext_resource type="Script" path="res://cenas/menu/menu.gd" id="1_mrhiv"]
+[ext_resource type="FontFile" uid="uid://bw1l1g7bumcq7" path="res://characters/fonte/Kurland.ttf" id="1_mw5nl"]
+[ext_resource type="Texture2D" uid="uid://c7wx8y35gxkxn" path="res://characters/fundos/Mountain-Dusk.png" id="2_tyn7s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ff46q"]
+font = ExtResource("1_mw5nl")
+font_size = 24
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(4, 4)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrhiv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tyn7s")
+
+[node name="NomeJogo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 227.0
+offset_bottom = 39.0
+text = "Ilha da Programação
+"
+label_settings = SubResource("LabelSettings_ff46q")
+vertical_alignment = 1
+
+[node name="ContainerBotoes" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -30.0
+offset_right = 59.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="NovoJogo" type="Button" parent="ContainerBotoes"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mw5nl")
+theme_override_font_sizes/font_size = 15
+text = "Novo Jogo"
+
+[node name="Controles" type="Button" parent="ContainerBotoes"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mw5nl")
+theme_override_font_sizes/font_size = 15
+text = "Controles"
+
+[node name="Sair" type="Button" parent="ContainerBotoes"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mw5nl")
+theme_override_font_sizes/font_size = 15
+text = "Sair
+"
+
+[connection signal="pressed" from="ContainerBotoes/NovoJogo" to="." method="_ao_pressionar_novoJogo"]
+[connection signal="pressed" from="ContainerBotoes/Controles" to="." method="_ao_pressionar_controles"]
+[connection signal="pressed" from="ContainerBotoes/Sair" to="." method="_ao_pressionar_sair"]
