@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var textura: Sprite2D = get_node("Textura")
 @onready var barra_vida: ProgressBar = get_node("BarraVida")
 
+const TEMPLATE_AUDIO: PackedScene = preload("res://cenas/templateAudio/template_audio.tscn")
 var _state_machine
 var esta_atacando: bool = false
 var esta_morto = false
@@ -57,6 +58,7 @@ func animar() -> void:
 	
 func atacar() -> void:
 	if Input.is_action_just_pressed("ataque") and !esta_atacando:
+		criarEfeitoSonoro("res://characters/sons/07_human_atk_sword_2.wav")
 		set_physics_process(false)
 		temporizador_ataque.start()
 		esta_atacando = true
@@ -78,10 +80,12 @@ func levar_dano(dano):
 		barra_vida.value = 0
 		esta_morto = true
 		_state_machine.travel("morte")
+		criarEfeitoSonoro("res://characters/sons/14_human_death_spin.wav")
 		await get_tree().create_timer(0.8).timeout
 		get_tree().reload_current_scene()
 		
 func notificar_dano():
+	criarEfeitoSonoro("res://characters/sons/11_human_damage_3.wav")
 	textura.modulate = "#c40000"
 	await get_tree().create_timer(0.2).timeout
 	textura.modulate = "#ffffff"
@@ -104,3 +108,8 @@ func regenerar_vida() -> void:
 			
 func quando_tempo_regeneracao_acabar():
 	regenerar_vida()
+	
+func criarEfeitoSonoro(caminhoAudio:String):
+	var audio = TEMPLATE_AUDIO.instantiate()
+	audio.efeitoSonoro = caminhoAudio
+	add_child(audio)

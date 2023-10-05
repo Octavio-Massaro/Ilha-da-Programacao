@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const TEMPLATE_AUDIO: PackedScene = preload("res://cenas/templateAudio/template_audio.tscn")
+
 var referencia_jogador = null
 var MOVE_SPEED = 120
 var vida: int = 100
@@ -34,6 +36,7 @@ func perseguir():
 	move_and_slide()
 	
 func atacar():
+	criarEfeitoSonoro("res://characters/sons/17_orc_atk_sword_1.wav")
 	pode_atacar = false
 	referencia_jogador.levar_dano(dano)
 	await get_tree().create_timer(1.0).timeout
@@ -67,6 +70,7 @@ func levar_dano(dano):
 		queue_free()
 
 func notificar_dano():
+	criarEfeitoSonoro("res://characters/sons/21_orc_damage_1.wav")
 	animacao.modulate = "#c40000"
 	await get_tree().create_timer(0.2).timeout
 	animacao.modulate = "#ffffff"
@@ -74,3 +78,7 @@ func notificar_dano():
 func atualizar_barra_vida():
 	barra_vida.value = vida
 
+func criarEfeitoSonoro(caminhoAudio:String):
+	var audio = TEMPLATE_AUDIO.instantiate()
+	audio.efeitoSonoro = caminhoAudio
+	add_child(audio)
