@@ -841,14 +841,17 @@ blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_knto5"]
+states/End/position = Vector2(631, 130)
+states/Start/position = Vector2(192, 117)
 states/andando/node = SubResource("AnimationNodeBlendSpace2D_rpaw8")
-states/andando/position = Vector2(385, 128)
+states/andando/position = Vector2(385, 130)
 states/atacando/node = SubResource("AnimationNodeBlendSpace2D_4xfdn")
-states/atacando/position = Vector2(385, 201)
+states/atacando/position = Vector2(390, 196)
 states/morte/node = SubResource("AnimationNodeBlendSpace2D_h7h44")
-states/morte/position = Vector2(377, 259)
+states/morte/position = Vector2(385, 253)
 states/parado/node = SubResource("AnimationNodeBlendSpace2D_xwh63")
-states/parado/position = Vector2(377, 51)
+states/parado/position = Vector2(385, 60)
+graph_offset = Vector2(0, 34.2146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s717g"]
 
@@ -881,7 +884,7 @@ active = true
 parameters/andando/blend_position = Vector2(0, 0)
 parameters/atacando/blend_position = Vector2(0, 0)
 parameters/morte/blend_position = Vector2(0, 0)
-parameters/parado/blend_position = Vector2(0, 0)
+parameters/parado/blend_position = Vector2(-1, -0.00227785)
 
 [node name="TempoAtaque" type="Timer" parent="."]
 wait_time = 0.4

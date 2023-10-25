@@ -11,32 +11,29 @@ extends CharacterBody2D
 @onready var barra_vida: ProgressBar = get_node("BarraVida")
 
 const TEMPLATE_AUDIO: PackedScene = preload("res://cenas/templateAudio/template_audio.tscn")
-var _state_machine
+var maquina_estado
 var esta_atacando: bool = false
 var esta_morto = false
 var vida_maxima: int
 
-
 func _ready():
 	vida_maxima = vida
 	barra_vida.max_value = vida_maxima
-	_state_machine = _animation_tree["parameters/playback"]
+	maquina_estado = _animation_tree["parameters/playback"]
 
-
-func _physics_process(_delta)-> void:
+func _physics_process(_delta):
 	if !esta_morto:
 		atualizar_barra_vida()
 		atacar()
 		movimentar()
 		animar()	
-	
-	
-
-func movimentar() -> void:
+		
+func movimentar():
 	var direcao: Vector2 = Vector2(
 		Input.get_axis("mover_esquerda","mover_direita"),
 		Input.get_axis("mover_baixo","mover_cima")
 	)
+	
 	if direcao != Vector2.ZERO:
 		_animation_tree["parameters/parado/blend_position"] = direcao
 		_animation_tree["parameters/andando/blend_position"] = direcao
@@ -46,29 +43,27 @@ func movimentar() -> void:
 	
 	move_and_slide()
 
-func animar() -> void:
+func animar():
 	if esta_atacando:
-		_state_machine.travel("atacando")
+		maquina_estado.travel("atacando")
 		return
 		
 	if velocity != Vector2.ZERO:
-		_state_machine.travel("andando")
+		maquina_estado.travel("andando")
 		return
-	_state_machine.travel("parado")
+	maquina_estado.travel("parado")
 	
-func atacar() -> void:
+func atacar():
 	if Input.is_action_just_pressed("ataque") and !esta_atacando:
 		criarEfeitoSonoro("res://characters/sons/07_human_atk_sword_2.wav")
 		set_physics_process(false)
 		temporizador_ataque.start()
 		esta_atacando = true
 		
-
-func _quando_tempo_ataque_acabar() -> void:
+func _quando_tempo_ataque_acabar():
 	esta_atacando = false
 	set_physics_process(true)
 	
-
 func _ao_entrar_na_area_ataque(body):
 	if body.is_in_group("inimigo"):
 		body.levar_dano(dano)
@@ -79,7 +74,7 @@ func levar_dano(dano):
 	if vida <= 0:
 		barra_vida.value = 0
 		esta_morto = true
-		_state_machine.travel("morte")
+		maquina_estado.travel("morte")
 		criarEfeitoSonoro("res://characters/sons/14_human_death_spin.wav")
 		await get_tree().create_timer(0.8).timeout
 		get_tree().reload_current_scene()
@@ -90,7 +85,7 @@ func notificar_dano():
 	await get_tree().create_timer(0.2).timeout
 	textura.modulate = "#ffffff"
 	
-func atualizar_barra_vida() -> void:
+func atualizar_barra_vida():
 	barra_vida.value = vida
 	
 	if vida >= vida_maxima:
@@ -98,7 +93,7 @@ func atualizar_barra_vida() -> void:
 	else:
 		barra_vida.visible = true
 	
-func regenerar_vida() -> void:
+func regenerar_vida():
 	if vida < vida_maxima:
 		vida += 10
 		if vida > vida_maxima:

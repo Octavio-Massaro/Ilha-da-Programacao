@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qg4sk")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Fundo" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Texto" type="Label" parent="ColorRect"]
+[node name="Texto" type="Label" parent="Fundo"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,7 +45,7 @@ grow_vertical = 2
 text = "Obrigado por Jogar!"
 label_settings = SubResource("LabelSettings_ahmwf")
 
-[node name="Desenvolvedor" type="Label" parent="ColorRect"]
+[node name="Desenvolvedor" type="Label" parent="Fundo"]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 71.0
@@ -55,7 +55,7 @@ text = "Desenvolvedor: Octávio Massaro Ferreira
 "
 label_settings = SubResource("LabelSettings_cclpm")
 
-[node name="Menu" type="Button" parent="ColorRect"]
+[node name="Menu" type="Button" parent="Fundo"]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 100.0
@@ -65,7 +65,7 @@ theme_override_fonts/font = ExtResource("1_kxq85")
 text = "Menu
 "
 
-[node name="Sair" type="Button" parent="ColorRect"]
+[node name="Sair" type="Button" parent="Fundo"]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 130.0
@@ -75,5 +75,5 @@ theme_override_fonts/font = ExtResource("1_kxq85")
 text = "Sair
 "
 
-[connection signal="pressed" from="ColorRect/Menu" to="." method="_ao_pressionar_botao_menu"]
-[connection signal="pressed" from="ColorRect/Sair" to="." method="_ao_pressionar_botao_sair"]
+[connection signal="pressed" from="Fundo/Menu" to="." method="_ao_pressionar_botao_menu"]
+[connection signal="pressed" from="Fundo/Sair" to="." method="_ao_pressionar_botao_sair"]

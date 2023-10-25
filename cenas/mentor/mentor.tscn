@@ -39,7 +39,7 @@ sprite_frames = SubResource("SpriteFrames_ugvu1")
 animation = &"parado"
 frame_progress = 0.186349
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Colisao" type="CollisionShape2D" parent="."]
 position = Vector2(1, -7)
 shape = SubResource("CircleShape2D_seqv4")
 
@@ -47,10 +47,10 @@ shape = SubResource("CircleShape2D_seqv4")
 position = Vector2(0, -9)
 collision_layer = 0
 
-[node name="colisao" type="CollisionShape2D" parent="AreaDialogo"]
+[node name="Colisao" type="CollisionShape2D" parent="AreaDialogo"]
 position = Vector2(1, 6)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_bd5n8")
 
-[connection signal="body_entered" from="AreaDialogo" to="." method="_ao_entra_da_area_dialogo"]
+[connection signal="body_entered" from="AreaDialogo" to="." method="_ao_entra_na_area_dialogo"]
 [connection signal="body_exited" from="AreaDialogo" to="." method="_ao_sair_da_area_dialogo"]
