@@ -54,6 +54,16 @@ text = "Atacar: LMB ou Q
 "
 label_settings = SubResource("LabelSettings_lgbpu")
 
+[node name="TrocarDialogo" type="Label" parent="Fundo"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 105.0
+offset_right = 239.0
+offset_bottom = 155.0
+text = "Trocar Diálogo: Enter
+"
+label_settings = SubResource("LabelSettings_lgbpu")
+
 [node name="Voltar" type="Button" parent="Fundo"]
 layout_mode = 0
 offset_left = 133.0

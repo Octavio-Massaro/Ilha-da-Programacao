@@ -3,7 +3,7 @@ extends CharacterBody2D
 const TEMPLATE_AUDIO: PackedScene = preload("res://cenas/templateAudio/template_audio.tscn")
 var referencia_jogador = null
 var MOVE_SPEED = 100
-var vida: int = 80
+var vida: int = 110
 var dano: int = 20
 var pode_atacar: bool = true
 

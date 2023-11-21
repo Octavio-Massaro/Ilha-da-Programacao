@@ -3,16 +3,13 @@ extends CharacterBody2D
 const TEMPLATE_AUDIO: PackedScene = preload("res://cenas/templateAudio/template_audio.tscn")
 var referencia_jogador = null
 var MOVE_SPEED = 130
-var vida: int = 120
+var vida: int = 420
 var dano: int = 40
 var pode_atacar: bool = true
 
 @onready var barra_vida: ProgressBar = get_node("BarraVida")
 @onready var animacao: AnimatedSprite2D = get_node("Animacao")
 
-func _ready():
-	pass 
-	
 func _physics_process(_delta):
 	atualizar_barra_vida()
 	if referencia_jogador == null:

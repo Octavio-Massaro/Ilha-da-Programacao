@@ -4,7 +4,7 @@ const TEMPLATE_AUDIO: PackedScene = preload("res://cenas/templateAudio/template_
 
 var referencia_jogador = null
 var MOVE_SPEED = 120
-var vida: int = 100
+var vida: int = 130
 var dano: int = 30
 var pode_atacar: bool = true
 

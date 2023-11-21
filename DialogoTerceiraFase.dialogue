@@ -1,13 +1,24 @@
-~ this_is_a_node_title
-
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
-
+~ dialogo_da_terceira_missao
+Mentor: Chegamos aos planaltos do Heap, a residência de Dark Code está logo acima. Basta seguir a estrada e você não irá se perder.
+João: O senhor não irá comigo?
+Mentor: Gostaria de te ajudar, João, mas infelizmente meus dias de batalha já chegaram ao fim.
+Mentor: João antes de você partir eu preciso lhe contar algo.
+Mentor: No último confronto entre os dois exércitos, Dark Code recorreu a um recurso inimaginável para obter vantagem, ele herdou da classe bug primordial.
+João: Como assim, o que você quer dizer com isso?
+Mentor: Quando uma classe herda de outra, é possível utilizar os métodos e atributos da classe herdada.
+Mentor: Dessa forma, Dark Code, conseguiu acesso a recursos muito poderosos e assim, conseguiu vencer a resistência com facilidade.
+Mentor: No entanto, ele não previu que ao herdar de uma classe tão desprezível, ele acabaria com alguns efeitos colaterais.
+João: Quais foram esses efeitos?
+Mentor: Bom, seu código começou a ser corrompido e ele se tornou um erro de código assim como seus lacaios. Isso acabou limitando seu juízo e desde sua vitória, ele se isolou em sua morada em busca de uma solução.
+Mentor: No entanto, se minhas fontes de informação estiverem certas, ele encontrou um recurso para contornar o problema causado pela herança.
+João: E qual seria esse recurso?
+Mentor: Polimorfismo, Dark Code pretende sobrescrever os métodos que causaram conflitos com sua classe e assim corrigir seu código.
+Mentor: Se ele obter êxito nessa tarefa, nós estaremos perdidos, pois ele terá um poder além do alcance de qualquer objeto dessa Ilha.
+Mentor: Dessa forma, é aí que você entra na história, João. Após eu ter encapsulado meus dados, eu pude notar que você está aqui para vencer Dark Code e nos libertar.
+Mentor: Sendo assim, derrotar esse vilão fará com que você retorne para o seu antigo mundo, essa era a sua missão desde o início quando chegou nessa ilha.
+João: Ok, se o derrotar fará com que eu retorne para minha casa, considere a tarefa feita.
+Mentor: Um momento. Lembre-se que o caminho até a residência de Dark Code está repleto de sentinelas, esses são os erros de código mais perigosos da ilha.
+João: Eu tomarei cuidado.
+Mentor: Acredito que esse seja nosso último encontro, adorei ter conhecido você meu jovem.
+João: Obrigado por tudo, Mentor. Eu libertarei o seu povo desse mal!
 => END

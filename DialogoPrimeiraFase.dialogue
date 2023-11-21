@@ -7,11 +7,10 @@ Mentor: Bom para entender objeto você deve primeiro entender o que é uma class
 Mentor: Uma classe é algo mais abstrato, como se fosse um molde que estrutura os comportamentos e características de seu objeto.
 Mentor: As características são chamadas de atributos e os comportamentos são os métodos.
 Mentor: Dessa forma, o objeto seria uma instância da classe com os atributos e métodos preenchidos com valores, algo mais concreto.
-Mentor: Por exemplo, você assim como eu, é um objeto da classe humano, porém temos atributos com valores diferentes, o que nos difere um do outro.
+Mentor: Por exemplo, você, assim como eu, é um objeto da classe humano, porém temos atributos com valores diferentes, o que nos difere um do outro.
 João: Bom acho que estou começando a entender sobre objetos, mas o senhor poderia me dar mais exemplos para eu entender melhor esses atributos e métodos?
 Mentor: Claro meu jovem!
-Mentor: Você como jogador possui os métodos mover e atacar.
-Mentor: Utilize as teclas A, W, S, D para se locomover e o botão esquerdo do mouse para atacar.
+Mentor: Você como jogador possui os métodos mover e atacar. Utilize as teclas A, W, S, D para se locomover e o botão esquerdo do mouse para atacar.
 Mentor: Você possui o atributo Vida que começa por padrão no valor 100, não deixe esse valor chegar a zero ou seu código será corrompido e você será derrotado.
 João: Ok, acho que agora estou mais familiarizado com esses termos, mas como faço para voltar para casa?
 Mentor: Já que você entendeu sobre esses conceitos, eu tenho um favor para lhe pedir, se conseguir realiza-lo eu tentarei o meu máximo te levar de volta para casa.
